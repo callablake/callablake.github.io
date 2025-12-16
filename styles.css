@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@6000;700;800&display=swap");
+
+:root {
+  --ink: #0f1115;
+  --sand: #f4f1eb;
+  --accent: #2c3342;
+  --muted: #5f646b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  background: var(--sand);
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+figure {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 6vw;
+  background: var(--ink);
+  color: var(--sand);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+}
+
+header .name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--sand);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+nav a.active {
+  border-color: var(--sand);
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}
+
+.hero {
+  position: relative;
+  min-height: 65vh;
+  display: grid;
+  place-items: center;
+  color: #f8f7f2;
+  padding: 4rem 6vw;
+  background: linear-gradient(120deg, rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.65)), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
+}
+
+.hero .about {
+  max-width: 740px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  background: rgba(15, 17, 21, 0.5);
+  padding: 2rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero .about h1 {
+  margin: 0 0 1rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero .about p {
+  margin: 0.8rem 0 0;
+  color: #d9d6ce;
+}
+
+footer {
+  padding: 2rem 6vw 3rem;
+  color: var(--ink);
+  border-top: 1px solid rgba(15, 17, 21, 0.08);
+  background: #ece7df;
+  letter-spacing: 0.04em;
+}
+
+footer h3 {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 0.1rem 0;
+  color: var(--muted);
+}
+
+.store {
+  padding: 3.5rem 6vw 4rem;
+}
+
+.store h2 {
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.gallery {
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+.piece {
+  background: rgba(15, 17, 21, 0);
+  border: 0px solid rgba(15, 17, 21, 0.07);
+  padding: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 2rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+.piece:hover img {
+  border-color: rgba(15, 17, 21, 0.15);
+  box-shadow: 0 14px 28px rgba(15, 17, 21, 0.12);
+}
+
+.piece img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  /* border: 1px solid rgba(15, 17, 21, 0.08); */
+  transition: box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.piece figcaption {
+  margin-top: 0.9rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.price {
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button {
+  padding: 0.7rem 1.4rem;
+  background: var(--ink);
+  color: #fdfbf7;
+  border: 1px solid var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.button:hover {
+  background: #d9d6ce;
+  color: var(--ink);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
+}
+
+.purchase {
+  padding: 3.5rem 6vw 4rem;
+}
+
+.purchase-card {
+  background: #fdfbf7;
+  border: 1px solid rgba(15, 17, 21, 0.12);
+  padding: 2rem;
+  max-width: 720px;
+}
+
+.purchase-card h1 {
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.purchase-card .price {
+  margin-bottom: 1rem;
+}
+
+.purchase-card p {
+  margin: 0.3rem 0 1rem;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.purchase-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.piece-detail {
+  padding: 3.5rem 6vw 4rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.detail-image img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(15, 17, 21, 0.12);
+}
+
+.detail-info h1 {
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.detail-info p {
+  margin: 0.4rem 0 1rem;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

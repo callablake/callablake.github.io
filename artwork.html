@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calla Manwaring — art</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="name">Calla Manwaring</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" aria-current="page" href="store.html">Store</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="piece-detail" id="detail">
+      <div class="detail-grid" id="detail-grid"></div>
+    </section>
+  </main>
+
+  <script src="artworks.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const detailGrid = document.getElementById("detail-grid");
+
+    const art = Array.isArray(window.ARTWORKS)
+      ? window.ARTWORKS.find((item) => item.slug === slug)
+      : null;
+
+    if (!art) {
+      const missing = document.createElement("p");
+      missing.className = "muted";
+      missing.textContent = "Artwork not found. Please return to the store.";
+      detailGrid.appendChild(missing);
+    } else {
+      const imageWrap = document.createElement("div");
+      imageWrap.className = "detail-image";
+      const img = document.createElement("img");
+      img.src = art.image;
+      img.alt = `${art.title} painting`;
+      imageWrap.appendChild(img);
+
+      const info = document.createElement("div");
+      info.className = "detail-info";
+      const title = document.createElement("h1");
+      title.textContent = art.title;
+      const price = document.createElement("div");
+      price.className = "price";
+      price.textContent = art.price;
+      const desc = document.createElement("p");
+      desc.textContent = art.description || "";
+
+      const actions = document.createElement("div");
+      actions.className = "purchase-actions";
+      const purchase = document.createElement("a");
+      purchase.className = "button";
+      purchase.href = `purchase.html?slug=${encodeURIComponent(art.slug)}`;
+      purchase.textContent = "Purchase";
+      const back = document.createElement("a");
+      back.className = "close";
+      back.href = "store.html";
+      back.textContent = "Back to store";
+
+      actions.appendChild(purchase);
+      actions.appendChild(back);
+
+      info.appendChild(title);
+      info.appendChild(price);
+      info.appendChild(desc);
+      info.appendChild(actions);
+
+      detailGrid.appendChild(imageWrap);
+      detailGrid.appendChild(info);
+    }
+  </script>
+</body>
+</html>

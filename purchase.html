@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calla Manwaring — purchase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="name">Calla Manwaring</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" aria-current="page" href="store.html">Store</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="purchase">
+      <div class="purchase-card">
+        <h1 id="purchase-title">Artwork</h1>
+        <div class="price" id="purchase-price">Price upon request</div>
+        <p id="purchase-description">This is a placeholder checkout page. To reserve this work, please reach out directly with the title and we will arrange purchase details.</p>
+        <div class="purchase-actions">
+          <a class="button" id="email-link" href="mailto:studio@callarivers.com">Email the studio</a>
+          <a class="close" href="store.html">Back to store</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="artworks.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const titleEl = document.getElementById("purchase-title");
+    const priceEl = document.getElementById("purchase-price");
+    const descEl = document.getElementById("purchase-description");
+    const emailLink = document.getElementById("email-link");
+
+    const art = Array.isArray(window.ARTWORKS)
+      ? window.ARTWORKS.find((item) => item.slug === slug)
+      : null;
+
+    if (art) {
+      titleEl.textContent = art.title;
+      priceEl.textContent = art.price;
+      if (art.description) descEl.textContent = art.description;
+      emailLink.href = `mailto:studio@callarivers.com?subject=${encodeURIComponent("Purchase Inquiry: " + art.title)}`;
+    } else {
+      titleEl.textContent = "Artwork not found";
+      priceEl.textContent = "";
+      descEl.textContent = "This piece is no longer available. Please return to the store.";
+    }
+  </script>
+</body>
+</html>
