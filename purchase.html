@@ -20,9 +20,9 @@
       <div class="purchase-card">
         <h1 id="purchase-title">Artwork</h1>
         <div class="price" id="purchase-price">Price upon request</div>
-        <p id="purchase-description">This is a placeholder checkout page. To reserve this work, please reach out directly with the title and we will arrange purchase details.</p>
+        <p id="purchase-description">This is a placeholder checkout page. To reserve this work, please reach out directly with the title and I will arrange purchase details.</p>
         <div class="purchase-actions">
-          <a class="button" id="email-link" href="mailto:studio@callarivers.com">Email the studio</a>
+          <a class="button" id="email-link" href="mailto:callamanwaring3@gmail.com">Email</a>
           <a class="close" href="store.html">Back to store</a>
         </div>
       </div>
@@ -46,7 +46,7 @@
       titleEl.textContent = art.title;
       priceEl.textContent = art.price;
       if (art.description) descEl.textContent = art.description;
-      emailLink.href = `mailto:studio@callarivers.com?subject=${encodeURIComponent("Purchase Inquiry: " + art.title)}`;
+      emailLink.href = `mailto:?subject=${encodeURIComponent("Purchase Inquiry: " + art.title)}`;
     } else {
       titleEl.textContent = "Artwork not found";
       priceEl.textContent = "";

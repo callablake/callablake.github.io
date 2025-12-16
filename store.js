@@ -17,7 +17,7 @@ const buildGallery = () => {
     const figure = document.createElement("figure");
 
     const img = document.createElement("img");
-    img.src = art.image;
+    img.src = art.compressed;
     img.alt = `${art.title} painting`;
 
     const caption = document.createElement("figcaption");

@@ -3,7 +3,8 @@ window.ARTWORKS = [
     slug: "uhhh-idk",
     title: "Uhhh idk",
     price: "$2,000",
-    image: "images/1.jpg",
+    image: "images/1.png",
+    compressed: "compressed/1.webp",
     description: ""
   },
   {
@@ -11,6 +12,7 @@ window.ARTWORKS = [
     title: "Uhm",
     price: "$1,250",
     image: "images/2.jpg",
+    compressed: "compressed/2.webp",
     description: ""
   },
   {
@@ -18,6 +20,7 @@ window.ARTWORKS = [
     title: "Ballerina",
     price: "$25",
     image: "images/3.jpg",
+    compressed: "compressed/3.webp",
     description: ""
   },
   {
@@ -25,6 +28,7 @@ window.ARTWORKS = [
     title: "IDK",
     price: "$25",
     image: "images/4.jpg",
+    compressed: "compressed/4.webp",
     description: ""
   },
   {
@@ -32,6 +36,7 @@ window.ARTWORKS = [
     title: "Isnami",
     price: "$25",
     image: "images/5.jpg",
+    compressed: "compressed/5.webp",
     description: ""
   },
   {
@@ -39,6 +44,7 @@ window.ARTWORKS = [
     title: "6",
     price: "$25",
     image: "images/6.png",
+    compressed: "compressed/6.webp",
     description: ""
   },
   {
@@ -46,6 +52,7 @@ window.ARTWORKS = [
     title: "7",
     price: "$25",
     image: "images/7.png",
+    compressed: "compressed/7.webp",
     description: ""
   },
   {
@@ -53,6 +60,7 @@ window.ARTWORKS = [
     title: "8",
     price: "$25",
     image: "images/8.png",
+    compressed: "compressed/8.webp",
     description: ""
   },
   {
@@ -60,6 +68,7 @@ window.ARTWORKS = [
     title: "9",
     price: "$25",
     image: "images/9.png",
+    compressed: "compressed/9.webp",
     description: ""
   },
   {
@@ -67,6 +76,7 @@ window.ARTWORKS = [
     title: "10",
     price: "$25",
     image: "images/10.png",
+    compressed: "compressed/10.webp",
     description: ""
   },
   {
@@ -74,6 +84,7 @@ window.ARTWORKS = [
     title: "11",
     price: "$25",
     image: "images/11.png",
+    compressed: "compressed/11.webp",
     description: ""
   },
   {
@@ -81,6 +92,7 @@ window.ARTWORKS = [
     title: "12",
     price: "$25",
     image: "images/12.png",
+    compressed: "compressed/12.webp",
     description: ""
   },
   {
@@ -88,6 +100,7 @@ window.ARTWORKS = [
     title: "13",
     price: "$25",
     image: "images/13.png",
+    compressed: "compressed/13.webp",
     description: ""
   },
   {
@@ -95,6 +108,7 @@ window.ARTWORKS = [
     title: "14",
     price: "$25",
     image: "images/14.png",
+    compressed: "compressed/14.webp",
     description: ""
   },
 ];

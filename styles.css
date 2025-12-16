@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@6000;700;800&display=swap");
 
 :root {
-  --ink: #0f1115;
-  --sand: #f4f1eb;
-  --accent: #2c3342;
-  --muted: #5f646b;
+  --ink: #15130f;
+  --sand: #f4ecde;
+  --dirty: #eadfce;
+  --accent: #42342c;
+  --muted: #6b655f;
 }
 
 * {
@@ -28,8 +29,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 6vw;
-  background: var(--ink);
-  color: var(--sand);
+  background: var(--dirty);
+  color: var(--ink);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.95rem;
@@ -47,7 +48,7 @@ nav {
 }
 
 nav a {
-  color: var(--sand);
+  color: var(--ink);
   text-decoration: none;
   letter-spacing: 0.08em;
   padding: 0.2rem 0;
@@ -55,11 +56,11 @@ nav a {
 }
 
 nav a.active {
-  border-color: var(--sand);
+  border-color: var(--muted);
 }
 
 main {
-  min-height: calc(100vh - 80px);
+  /* min-height: calc(100vh - 80px); */
 }
 
 .hero {
@@ -69,7 +70,7 @@ main {
   place-items: center;
   color: #f8f7f2;
   padding: 4rem 6vw;
-  background: linear-gradient(120deg, rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.65)), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
+  background: linear-gradient(120deg, rgba(15, 17, 21, 0.2), rgba(15, 17, 21, 0.65)), url("images/bg.png") center/cover no-repeat;
 }
 
 .hero .about {
@@ -97,7 +98,7 @@ footer {
   padding: 2rem 6vw 3rem;
   color: var(--ink);
   border-top: 1px solid rgba(15, 17, 21, 0.08);
-  background: #ece7df;
+  background: var(--dirty);
   letter-spacing: 0.04em;
 }
 
@@ -111,6 +112,10 @@ footer h3 {
 footer p {
   margin: 0.1rem 0;
   color: var(--muted);
+}
+
+footer a {
+  color: var(--accent)
 }
 
 .store {
@@ -145,22 +150,26 @@ footer p {
 
 .piece:hover img {
   border-color: rgba(15, 17, 21, 0.15);
-  box-shadow: 0 14px 28px rgba(15, 17, 21, 0.12);
+  box-shadow: 0 14px 28px rgba(15, 17, 21, 0.22);
 }
 
 .piece img {
   width: 100%;
   display: block;
   object-fit: cover;
-  /* border: 1px solid rgba(15, 17, 21, 0.08); */
-  transition: box-shadow 180ms ease, border-color 180ms ease;
+  transition: box-shadow 300ms ease;
 }
 
 .piece figcaption {
   margin-top: 0.9rem;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
   color: var(--accent);
+  transition: text-shadow 300ms ease;
+}
+
+.piece:hover figcaption {
+  text-shadow: 0 4px 8px rgba(15, 17, 21, 0.22);
 }
 
 .price {
@@ -210,8 +219,8 @@ footer p {
 }
 
 .purchase-card {
-  background: #fdfbf7;
-  border: 1px solid rgba(15, 17, 21, 0.12);
+  background: var(--dirty);
+  /* border: 1px solid rgba(15, 17, 21, 0.12); */
   padding: 2rem;
   max-width: 720px;
 }
