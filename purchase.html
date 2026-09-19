@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calla Manwaring — purchase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="name">Calla Manwaring</div>
+    <a class="name" href="index.html">Calla Manwaring</a>
     <nav>
       <a href="index.html">Home</a>
       <a class="active" aria-current="page" href="store.html">Store</a>
@@ -19,39 +20,61 @@
     <section class="purchase">
       <div class="purchase-card">
         <h1 id="purchase-title">Artwork</h1>
-        <div class="price" id="purchase-price">Price upon request</div>
+        <p class="price" id="purchase-price">Price upon request</p>
         <p id="purchase-description">This is a placeholder checkout page. To reserve this work, please reach out directly with the title and I will arrange purchase details.</p>
         <div class="purchase-actions">
-          <a class="button" id="email-link" href="mailto:callamanwaring3@gmail.com">Email</a>
-          <a class="close" href="store.html">Back to store</a>
+          <a class="button" id="email-link" href="mailto:callamanwaring3@gmail.com">Email to purchase</a>
+          <a class="button button-outline" id="back-link" href="store.html">Return to gallery</a>
         </div>
       </div>
     </section>
   </main>
 
-  <script src="artworks.js"></script>
+  <footer>
+    <h3>Contact</h3>
+    <p><a href="https://www.instagram.com/callapaintings/"><i class="fab fa-instagram"></i> @callapaintings</a></p>
+    <p><a href="mailto:callamanwaring3@gmail.com"><i class="fa-regular fa-envelope"></i> callamanwaring3@gmail.com</a></p>
+  </footer>
+
+  <script src="data.js"></script>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("slug");
+    const slug = new URLSearchParams(window.location.search).get("slug");
     const titleEl = document.getElementById("purchase-title");
     const priceEl = document.getElementById("purchase-price");
     const descEl = document.getElementById("purchase-description");
     const emailLink = document.getElementById("email-link");
+    const backLink = document.getElementById("back-link");
 
-    const art = Array.isArray(window.ARTWORKS)
-      ? window.ARTWORKS.find((item) => item.slug === slug)
-      : null;
-
-    if (art) {
-      titleEl.textContent = art.title;
-      priceEl.textContent = art.price;
-      if (art.description) descEl.textContent = art.description;
-      emailLink.href = `mailto:?subject=${encodeURIComponent("Purchase Inquiry: " + art.title)}`;
-    } else {
+    const showMissing = () => {
       titleEl.textContent = "Artwork not found";
       priceEl.textContent = "";
-      descEl.textContent = "This piece is no longer available. Please return to the store.";
-    }
+      descEl.textContent = "This piece is no longer available. Please return to the gallery.";
+      emailLink.hidden = true;
+    };
+
+    const showArtwork = (art) => {
+      document.title = `Purchase ${art.title} — Calla Manwaring`;
+      titleEl.textContent = art.title;
+      backLink.href = `artwork.html?slug=${encodeURIComponent(art.slug)}`;
+      backLink.textContent = "Back to piece";
+
+      if (art.sold) {
+        priceEl.textContent = "Sold";
+        descEl.textContent = "This piece has sold. Feel free to reach out about similar work or commissions.";
+        emailLink.textContent = "Email";
+        emailLink.href = `mailto:callamanwaring3@gmail.com?subject=${encodeURIComponent("Inquiry: " + art.title)}`;
+      } else {
+        priceEl.textContent = art.price;
+        emailLink.href = `mailto:callamanwaring3@gmail.com?subject=${encodeURIComponent("Purchase Inquiry: " + art.title)}`;
+      }
+    };
+
+    window.loadArtworks()
+      .then((works) => {
+        const art = works.find((item) => item.slug === slug);
+        art ? showArtwork(art) : showMissing();
+      })
+      .catch(showMissing);
   </script>
 </body>
 </html>

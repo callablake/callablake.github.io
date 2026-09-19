@@ -1,0 +1,240 @@
+[
+  {
+    "slug": "uhhh-idk",
+    "title": "Uhhh idk",
+    "price": "$2,000",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/uhhh-idk-e094-thumb.webp",
+      "display": "art/uhhh-idk-e094-display.webp",
+      "full": "art/uhhh-idk-e094-full.webp",
+      "width": 2592,
+      "height": 3451
+    }
+  },
+  {
+    "slug": "uhm",
+    "title": "Uhm",
+    "price": "$1,250",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/uhm-be2c-thumb.webp",
+      "display": "art/uhm-be2c-display.webp",
+      "full": "art/uhm-be2c-full.webp",
+      "width": 1080,
+      "height": 878
+    }
+  },
+  {
+    "slug": "ballerina",
+    "title": "Ballerina",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/ballerina-73c4-thumb.webp",
+      "display": "art/ballerina-73c4-display.webp",
+      "full": "art/ballerina-73c4-full.webp",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  {
+    "slug": "idk",
+    "title": "IDK",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/idk-17a1-thumb.webp",
+      "display": "art/idk-17a1-display.webp",
+      "full": "art/idk-17a1-full.webp",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  {
+    "slug": "isnami",
+    "title": "Isnami",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/isnami-4d92-thumb.webp",
+      "display": "art/isnami-4d92-display.webp",
+      "full": "art/isnami-4d92-full.webp",
+      "width": 1080,
+      "height": 1343
+    }
+  },
+  {
+    "slug": "6",
+    "title": "6",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/6-e509-thumb.webp",
+      "display": "art/6-e509-display.webp",
+      "full": "art/6-e509-full.webp",
+      "width": 2452,
+      "height": 3270
+    }
+  },
+  {
+    "slug": "7",
+    "title": "7",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/7-4919-thumb.webp",
+      "display": "art/7-4919-display.webp",
+      "full": "art/7-4919-full.webp",
+      "width": 3125,
+      "height": 2147
+    }
+  },
+  {
+    "slug": "8",
+    "title": "8",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/8-4455-thumb.webp",
+      "display": "art/8-4455-display.webp",
+      "full": "art/8-4455-full.webp",
+      "width": 2878,
+      "height": 3625
+    }
+  },
+  {
+    "slug": "9",
+    "title": "9",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/9-052c-thumb.webp",
+      "display": "art/9-052c-display.webp",
+      "full": "art/9-052c-full.webp",
+      "width": 2498,
+      "height": 3209
+    }
+  },
+  {
+    "slug": "10",
+    "title": "10",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/10-13b2-thumb.webp",
+      "display": "art/10-13b2-display.webp",
+      "full": "art/10-13b2-full.webp",
+      "width": 4032,
+      "height": 3024
+    }
+  },
+  {
+    "slug": "11",
+    "title": "11",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/11-71ef-thumb.webp",
+      "display": "art/11-71ef-display.webp",
+      "full": "art/11-71ef-full.webp",
+      "width": 2515,
+      "height": 2495
+    }
+  },
+  {
+    "slug": "12",
+    "title": "12",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/12-d320-thumb.webp",
+      "display": "art/12-d320-display.webp",
+      "full": "art/12-d320-full.webp",
+      "width": 4011,
+      "height": 2989
+    }
+  },
+  {
+    "slug": "13",
+    "title": "13",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/13-6279-thumb.webp",
+      "display": "art/13-6279-display.webp",
+      "full": "art/13-6279-full.webp",
+      "width": 2727,
+      "height": 3340
+    }
+  },
+  {
+    "slug": "14",
+    "title": "14",
+    "price": "$25",
+    "medium": "Medium TBD",
+    "size": "Size TBD",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/14-6407-thumb.webp",
+      "display": "art/14-6407-display.webp",
+      "full": "art/14-6407-full.webp",
+      "width": 3024,
+      "height": 4032
+    }
+  }
+]

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Artwork editor — Calla Manwaring</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <header>
+    <span class="name">Artwork editor</span>
+    <nav>
+      <a href="../store.html" target="_blank" rel="noopener">View site ↗</a>
+    </nav>
+  </header>
+
+  <main class="editor">
+    <div class="publish-bar">
+      <p class="status" id="status" role="status">Not connected.</p>
+      <button class="button" id="publish" type="button" disabled>Publish</button>
+    </div>
+
+    <details class="panel" id="connection">
+      <summary>Connection settings</summary>
+      <form id="connection-form" class="fields">
+        <label>GitHub access token
+          <input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+        </label>
+        <div class="field-row">
+          <label>Owner <input id="owner" spellcheck="false"></label>
+          <label>Repository <input id="repo" spellcheck="false"></label>
+          <label>Branch <input id="branch" spellcheck="false"></label>
+        </div>
+        <div class="actions">
+          <button class="button" type="submit">Save &amp; connect</button>
+          <button class="button button-outline" type="button" id="forget">Forget token</button>
+        </div>
+        <p class="hint">The token is saved only in this browser on this device.</p>
+
+        <details class="help">
+          <summary>How do I get a token?</summary>
+          <ol>
+            <li>Sign in to GitHub with the account that owns the site's repository.</li>
+            <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+            <li>Name it something like "Artwork editor" and pick an expiration (up to a year; you'll need to make a new one when it expires).</li>
+            <li>Under <strong>Repository access</strong>, choose <strong>Only select repositories</strong> and pick the site's repository.</li>
+            <li>Under <strong>Permissions → Repository permissions</strong>, set <strong>Contents</strong> to <strong>Read and write</strong>.</li>
+            <li>Click <strong>Generate token</strong>, copy it, and paste it above.</li>
+          </ol>
+          <p class="hint">If you're a collaborator on someone else's repository (not the owner), fine-grained tokens won't work there. Create a classic token instead at <a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener">github.com/settings/tokens/new</a> with the <strong>public_repo</strong> scope.</p>
+        </details>
+      </form>
+    </details>
+
+    <div class="toolbar">
+      <button class="button" type="button" id="add">Add work</button>
+      <button class="button button-outline" type="button" id="reload">Reload from GitHub</button>
+      <label class="button button-outline">Import JSON
+        <input type="file" id="import" accept="application/json,.json" class="visually-hidden">
+      </label>
+      <button class="button button-outline" type="button" id="export">Export JSON</button>
+    </div>
+
+    <ol class="works" id="works"></ol>
+    <p class="muted" id="empty" hidden>No works yet. Use "Add work" to create one.</p>
+  </main>
+
+  <dialog id="dialog">
+    <form id="work-form" class="fields" method="dialog" novalidate>
+      <h2 id="dialog-title">Edit work</h2>
+
+      <div class="image-field">
+        <img id="preview" alt="" hidden>
+        <label class="button button-outline">
+          <span id="image-label">Choose image</span>
+          <input type="file" id="image" accept="image/*" class="visually-hidden">
+        </label>
+        <p class="hint" id="image-status"></p>
+      </div>
+
+      <label>Title <input id="f-title" required></label>
+      <label>Web address (slug)
+        <input id="f-slug" spellcheck="false" autocapitalize="off" required>
+        <span class="hint"><span id="slug-preview"></span> <button type="button" class="link" id="slug-auto">Reset to automatic</button></span>
+      </label>
+      <label>Price <input id="f-price" placeholder="$1,200"></label>
+      <div class="field-row">
+        <label>Medium <input id="f-medium" placeholder="Oil on canvas"></label>
+        <label>Size <input id="f-size" placeholder="24 × 36 in"></label>
+      </div>
+      <label>Description <textarea id="f-description" rows="3"></textarea></label>
+      <div class="checks">
+        <label class="check"><input type="checkbox" id="f-sold"> Sold</label>
+        <label class="check"><input type="checkbox" id="f-hidden"> Hidden (not shown on the site)</label>
+      </div>
+
+      <p class="error" id="form-error" role="alert"></p>
+
+      <div class="actions">
+        <button class="button" type="submit" id="save">Save</button>
+        <button class="button button-outline" type="button" id="cancel">Cancel</button>
+      </div>
+      <p class="hint">Saved changes go live when you press Publish.</p>
+    </form>
+  </dialog>
+
+  <script type="module" src="editor.js"></script>
+</body>
+</html>

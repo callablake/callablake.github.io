@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@6000;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
 
 :root {
   --ink: #15130f;
@@ -6,29 +6,66 @@
   --dirty: #eadfce;
   --accent: #42342c;
   --muted: #6b655f;
+  --line: rgba(21, 19, 15, 0.14);
+
+  /* One gutter value keeps every page's edges lined up */
+  --gutter: clamp(1rem, 5vw, 4rem);
+  --max-width: 1280px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
   background: var(--sand);
   color: var(--ink);
   letter-spacing: 0.01em;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 figure {
   margin: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 6vw;
+  gap: 0.5rem 1.5rem;
+  padding: 1.25rem var(--gutter);
   background: var(--dirty);
   color: var(--ink);
   text-transform: uppercase;
@@ -37,9 +74,11 @@ header {
 }
 
 header .name {
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 4vw, 1.3rem);
   font-weight: 600;
   letter-spacing: 0.1em;
+  color: inherit;
+  text-decoration: none;
 }
 
 nav {
@@ -53,15 +92,15 @@ nav a {
   letter-spacing: 0.08em;
   padding: 0.2rem 0;
   border-bottom: 1px solid transparent;
+  transition: border-color 150ms ease;
 }
 
+nav a:hover,
 nav a.active {
   border-color: var(--muted);
 }
 
-main {
-  /* min-height: calc(100vh - 80px); */
-}
+/* ---------- Home ---------- */
 
 .hero {
   position: relative;
@@ -69,7 +108,7 @@ main {
   display: grid;
   place-items: center;
   color: #f8f7f2;
-  padding: 4rem 6vw;
+  padding: 4rem var(--gutter);
   background: linear-gradient(120deg, rgba(15, 17, 21, 0.2), rgba(15, 17, 21, 0.65)), url("images/bg.png") center/cover no-repeat;
 }
 
@@ -78,13 +117,13 @@ main {
   line-height: 1.6;
   font-size: 1.2rem;
   background: rgba(15, 17, 21, 0.5);
-  padding: 2rem 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 5vw, 2.5rem);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hero .about h1 {
+.hero .about h2 {
   margin: 0 0 1rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -94,8 +133,10 @@ main {
   color: #d9d6ce;
 }
 
+/* ---------- Footer ---------- */
+
 footer {
-  padding: 2rem 6vw 3rem;
+  padding: 2rem var(--gutter) 3rem;
   color: var(--ink);
   border-top: 1px solid rgba(15, 17, 21, 0.08);
   background: var(--dirty);
@@ -115,82 +156,84 @@ footer p {
 }
 
 footer a {
-  color: var(--accent)
+  color: var(--accent);
+  display: inline-block;
+  padding: 0.25rem 0;
 }
+
+/* ---------- Gallery ---------- */
 
 .store {
-  padding: 3.5rem 6vw 4rem;
-}
-
-.store h2 {
-  margin: 0 0 1.5rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 1.4rem;
+  padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .gallery {
   column-count: 1;
-  column-gap: 2rem;
+  column-gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 .piece {
-  background: rgba(15, 17, 21, 0);
-  border: 0px solid rgba(15, 17, 21, 0.07);
-  padding: 2rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
   display: inline-block;
   width: 100%;
-  margin: 0 0 2rem;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  text-decoration: none;
+  color: inherit;
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
-}
-
-.piece:hover img {
-  border-color: rgba(15, 17, 21, 0.15);
-  box-shadow: 0 14px 28px rgba(15, 17, 21, 0.22);
 }
 
 .piece img {
   width: 100%;
   display: block;
-  object-fit: cover;
-  transition: box-shadow 300ms ease;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.piece:hover img {
+  box-shadow: 0 14px 28px rgba(15, 17, 21, 0.22);
 }
 
 .piece figcaption {
-  margin-top: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.piece .piece-title {
   font-size: 1.2rem;
   letter-spacing: 0.08em;
   color: var(--accent);
-  transition: text-shadow 300ms ease;
 }
 
-.piece:hover figcaption {
-  text-shadow: 0 4px 8px rgba(15, 17, 21, 0.22);
+.piece .price {
+  font-size: 1rem;
 }
+
+/* ---------- Shared bits ---------- */
 
 .price {
   color: var(--muted);
   letter-spacing: 0.03em;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   padding: 0.7rem 1.4rem;
   background: var(--ink);
   color: #fdfbf7;
   border: 1px solid var(--ink);
+  font: inherit;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background 150ms ease, color 150ms ease;
 }
@@ -200,13 +243,27 @@ footer a {
   color: var(--ink);
 }
 
-.close {
-  background: none;
-  border: none;
+.button-outline {
+  background: transparent;
+  color: var(--ink);
+}
+
+.button-outline:hover {
+  background: var(--dirty);
+}
+
+.button.is-disabled,
+.button.is-disabled:hover {
+  background: transparent;
   color: var(--muted);
-  cursor: pointer;
-  letter-spacing: 0.06em;
+  border-color: var(--line);
+  cursor: default;
+}
+
+.price.sold {
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
 }
 
 .muted {
@@ -214,82 +271,169 @@ footer a {
   color: var(--muted);
 }
 
-.purchase {
-  padding: 3.5rem 6vw 4rem;
-}
-
-.purchase-card {
-  background: var(--dirty);
-  /* border: 1px solid rgba(15, 17, 21, 0.12); */
-  padding: 2rem;
-  max-width: 720px;
-}
-
-.purchase-card h1 {
-  margin: 0 0 0.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 1.6rem;
-}
-
-.purchase-card .price {
-  margin-bottom: 1rem;
-}
-
-.purchase-card p {
-  margin: 0.3rem 0 1rem;
-  color: var(--accent);
-  line-height: 1.4;
-}
-
-.purchase-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-top: 1rem;
-}
+/* ---------- Artwork detail ---------- */
 
 .piece-detail {
-  padding: 3.5rem 6vw 4rem;
+  padding: clamp(1.5rem, 5vw, 4rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
+}
+
+.detail-grid > * {
+  /* Let grid columns shrink below the image's natural width */
+  min-width: 0;
+}
+
+.detail-image {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-image a {
+  display: block;
+  cursor: zoom-in;
 }
 
 .detail-image img {
-  width: 100%;
   display: block;
-  border: 1px solid rgba(15, 17, 21, 0.12);
+  width: auto;
+  max-width: 100%;
+  /* Keep the whole painting in view instead of making people scroll through it */
+  max-height: 80vh;
+  object-fit: contain;
 }
 
 .detail-info h1 {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.detail-info .price {
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+}
+
+.specs {
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.specs dt {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.specs dd {
+  margin: 0;
+  text-align: right;
+  color: var(--accent);
+}
+
+.detail-info .description {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  line-height: 1.6;
+}
+
+.detail-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* ---------- Purchase ---------- */
+
+.purchase {
+  padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.purchase-card {
+  background: var(--dirty);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 640px;
+}
+
+.purchase-card h1 {
   margin: 0 0 0.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, 5vw, 1.9rem);
+  line-height: 1.2;
 }
 
-.detail-info p {
-  margin: 0.4rem 0 1rem;
+.purchase-card .price {
+  margin: 0 0 1rem;
+}
+
+.purchase-card p {
+  margin: 0.3rem 0 1rem;
   color: var(--accent);
   line-height: 1.5;
+}
+
+.purchase-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 600px) {
+  .gallery {
+    column-count: 2;
+  }
 }
 
 @media (min-width: 900px) {
   .detail-grid {
     grid-template-columns: 3fr 2fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
     align-items: start;
   }
 
+  /* Info panel stays beside the painting while scrolling */
+  .detail-info {
+    position: sticky;
+    top: 2rem;
+    padding-top: 1rem;
+  }
+
+  .detail-image img {
+    max-height: 85vh;
+  }
+}
+
+@media (min-width: 1100px) {
   .gallery {
     column-count: 3;
   }
 }
 
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
