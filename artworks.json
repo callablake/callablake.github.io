@@ -34,14 +34,14 @@
     }
   },
   {
-    "slug": "ballerina",
-    "title": "Ballerina",
-    "price": "$25",
+    "slug": "ballerinaa",
+    "title": "Ballerinaa",
+    "price": "$30",
     "medium": "Medium TBD",
     "size": "Size TBD",
     "description": "",
     "sold": false,
-    "hidden": true,
+    "hidden": false,
     "images": {
       "thumb": "art/ballerina-73c4-thumb.webp",
       "display": "art/ballerina-73c4-display.webp",
