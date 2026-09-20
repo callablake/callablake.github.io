@@ -1,10 +1,10 @@
 [
   {
-    "slug": "uhhh-idk",
-    "title": "Uhhh idk",
+    "slug": "emerging-nude",
+    "title": "Emerging Nude",
     "price": "$2,000",
     "medium": "Oil on panel",
-    "size": "Size TBD",
+    "size": "22 x 30\"",
     "description": "",
     "sold": false,
     "hidden": false,
@@ -86,10 +86,10 @@
   },
   {
     "slug": "6",
-    "title": "6",
-    "price": "TBD",
-    "medium": "Medium TBD",
-    "size": "Size TBD",
+    "title": "Rust Nude",
+    "price": "100",
+    "medium": "Oil on panel",
+    "size": "8 x 10 in",
     "description": "",
     "sold": false,
     "hidden": false,
@@ -170,10 +170,10 @@
     }
   },
   {
-    "slug": "11",
-    "title": "11",
-    "price": "TBD",
-    "medium": "Medium TBD",
+    "slug": "primary-nude",
+    "title": "Primary Nude",
+    "price": "100",
+    "medium": "Oil on panel",
     "size": "Size TBD",
     "description": "",
     "sold": false,
@@ -204,10 +204,10 @@
     }
   },
   {
-    "slug": "13",
-    "title": "13",
-    "price": "TBD",
-    "medium": "Medium TBD",
+    "slug": "seated-blue",
+    "title": "Seated Blue",
+    "price": "30",
+    "medium": "Oil on paper",
     "size": "Size TBD",
     "description": "",
     "sold": false,
@@ -221,10 +221,10 @@
     }
   },
   {
-    "slug": "14",
-    "title": "14",
-    "price": "TBD",
-    "medium": "Medium TBD",
+    "slug": "seated-red",
+    "title": "Seated Red",
+    "price": "30",
+    "medium": "Oil on paper",
     "size": "Size TBD",
     "description": "",
     "sold": false,
@@ -235,6 +235,23 @@
       "full": "art/14-6407-full.webp",
       "width": 3024,
       "height": 4032
+    }
+  },
+  {
+    "slug": "lion-lady",
+    "title": "Lion Lady",
+    "price": "60",
+    "medium": "Oil on panel",
+    "size": "2 x 3 1/2 in",
+    "description": "",
+    "sold": false,
+    "hidden": false,
+    "images": {
+      "thumb": "art/lion-lady-e72e-thumb.webp",
+      "display": "art/lion-lady-e72e-display.webp",
+      "full": "art/lion-lady-e72e-full.webp",
+      "width": 1188,
+      "height": 2110
     }
   }
 ]
